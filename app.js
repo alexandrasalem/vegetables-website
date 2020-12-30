@@ -6,13 +6,8 @@ const app = express();
 
 //collecting routers
 var indexRouter = require("./routes/index");
-// var plantRouter = require("./routes/plant");
-// var searchRouter = require("./routes/search");
-
-// var usdaRouter = require("./routes/usda");
-// var gettingStartedRouter = require("./routes/gettingstarted");
-// var aboutRouter = require("./routes/about");
-// var mostPopularRouter = require("./routes/mostpopular");
+var gettingStartedRouter = require("./routes/gettingstarted");
+var calendarRouter = require("./routes/calendar");
 
 //misc...
 // app.use(logger("dev"));
@@ -26,12 +21,8 @@ app.set("view engine", "pug");
 
 //routing
 app.use("/", indexRouter);
-// app.use("/plant/", plantRouter);
-// app.use("/search/", searchRouter);
-// app.use("/usda/", usdaRouter);
 app.use("/gettingstarted/", gettingStartedRouter);
-// app.use("/about/", aboutRouter);
-// app.use("/mostpopular/", mostPopularRouter);
+app.use("/calendar/", calendarRouter);
 
 //start the server
 app.listen(port, () => {

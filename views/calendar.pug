@@ -1,0 +1,21 @@
+extends layout
+
+block content 
+    section#calendar-hero.hero.is-primary.has-bg-img.is-medium
+      .hero-body
+    section.section
+      .container
+        h1.title.is-1 Planting Calendar
+        .tile
+          .tile.is-10
+            p 
+              | Below is a planting calendar with tabs for vegetable 
+              strong starts
+              | , 
+              strong seeding indoors
+              | , and 
+              strong seeding outdoors.
+    section.section
+      .container
+        figure.image.is-16by9
+          iframe.has-ratio(src = "https://alexsalem.shinyapps.io/vegetables_basic/")

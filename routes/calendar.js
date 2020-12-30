@@ -2,7 +2,11 @@ var express = require("express");
 var router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render("index");
+  try {
+    res.render("calendar");
+  } catch (error) {
+    res.render("error", { message: "Something went wrong." });
+  }
 });
 
 module.exports = router;
