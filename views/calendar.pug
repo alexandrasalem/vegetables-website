@@ -19,3 +19,226 @@ block content
       .container
         figure.image.is-16by9
           iframe.has-ratio(src = "https://alexsalem.shinyapps.io/vegetables_basic/")
+    section.section
+      .container
+        input#myInput(type='text' onkeyup='myFunction()' placeholder='Search for names..')
+        table#myTable.table
+          thead
+            tr.header
+              th(style='width:60%;') Vegetable Name
+              th(style='width:40%;') Days to Harvest
+          tbody
+            tr
+              td
+                | Basil
+              td
+                | 90-120
+            tr
+              td
+                | Beans (bush or pole)
+              td
+                | 60-100
+            tr
+              td
+                | Beets
+              td
+                | 50-80
+            tr
+              td
+                | Broccoli
+              td
+                | 55-90
+            tr
+              td
+                | Brussel sprouts
+              td
+                | 100-180
+            tr
+              td
+                | Cabbage (early types)
+              td
+                | 80-90
+            tr
+              td
+                | Cabbage (late types)
+              td
+                | 80-90
+            tr
+              td
+                | Carrots
+              td
+                | 70-90
+            tr
+              td
+                | Cauliflower
+              td
+                | 90-150 (fall/winter)
+            tr
+              td
+                | Chard
+              td
+                | 60
+            tr
+              td
+                | Collards
+              td
+                | 80-100
+            tr
+              td
+                | Corn
+              td
+                | 70-110
+            tr
+              td
+                | Cucumbers
+              td
+                | 55-75
+            tr
+              td
+                | Endive
+              td
+                | 60-80
+            tr
+              td
+                | Fava beans
+              td
+                | 180
+            tr
+              td
+                | Garlic
+              td
+                | 220-300
+            tr
+              td
+                | Green onions
+              td
+                | 40-60
+            tr
+              td
+                | Kale
+              td
+                | 60-70
+            tr
+              td
+                | Kohlrabi
+              td
+                | 60-70
+            tr
+              td
+                | Leeks
+              td
+                | 120
+            tr
+              td
+                | Lettuce
+              td
+                | 65-80
+            tr
+              td
+                | Melons
+              td
+                | 55-85
+            tr
+              td
+                | Mustard greens
+              td
+                | 30-60
+            tr
+              td
+                | Onions
+              td
+                | 100-120
+            tr
+              td
+                | Parsley
+              td
+                | 80-90
+            tr
+              td
+                | Parsnips
+              td
+                | 120
+            tr
+              td
+                | Peas
+              td
+                | 90-110
+            tr
+              td
+                | Peppers
+              td
+                | 80-100
+            tr
+              td
+                | Potatoes
+              td
+                | 70-120
+            tr
+              td
+                | Pumpkins
+              td
+                | 90-110
+            tr
+              td
+                | Radishes
+              td
+                | 25-35
+            tr
+              td
+                | Rutabaga
+              td
+                | 90-95
+            tr
+              td
+                | Shallots
+              td
+                | 90
+            tr
+              td
+                | Spinach
+              td
+                | 40-50
+            tr
+              td
+                | Squash (summer)
+              td
+                | 55-70
+            tr
+              td
+                | Squash (winter)
+              td
+                | 100-150
+            tr
+              td
+                | Tomatoes
+              td
+                | 60-70
+            tr
+              td
+                | Turnips
+              td
+                | 30-55
+
+
+    script(type='text/javascript').
+      function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
