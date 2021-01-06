@@ -21,12 +21,14 @@ block content
           iframe.has-ratio(src = "https://alexsalem.shinyapps.io/vegetables_basic/")
     section.section
       .container
-        input#myInput(type='text' onkeyup='myFunction()' placeholder='Search for names..')
-        table#myTable.table
+        input#myInput(type='text' onkeyup='nameFilter()' placeholder='Search for names..')
+        table#myTable.table.is-scrollable
           thead
-            tr.header
-              th(style='width:60%;') Vegetable Name
-              th(style='width:40%;') Days to Harvest
+            tr
+              th 
+                | Vegetable Name
+              th 
+                | Days to Harvest
           tbody
             tr
               td
@@ -221,7 +223,7 @@ block content
 
 
     script(type='text/javascript').
-      function myFunction() {
+      function nameFilter() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
         input = document.getElementById("myInput");
