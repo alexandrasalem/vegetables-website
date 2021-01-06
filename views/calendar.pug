@@ -15,13 +15,20 @@ block content
               strong seeding indoors
               | , and 
               strong seeding outdoors.
+              | These recommendations for planting dates come from a Portland Nursery resource here. In each tab, you can search for a vegetable or month, sort, or just scroll through all the options. More information on starts, seeding indoors, and seeding outdoors is in the Getting Started tab.
     section.section
       .container
         figure.image.is-16by9
           iframe.has-ratio(src = "https://alexsalem.shinyapps.io/vegetables_basic/")
     section.section
       .container
+        h1.title.is-1 Days to Harvest
+        .tile
+          .tile.is-10
+            p A table with the number of days until a vegetable is ready to harvest is shown below. You can search for a vegetable in the search bar. These days are measured from when a seed has germinated.
+        br
         input#myInput(type='text' onkeyup='nameFilter()' placeholder='Search for names..')
+        br
         table#myTable.table.is-scrollable
           thead
             tr
